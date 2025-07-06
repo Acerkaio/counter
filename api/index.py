@@ -1,8 +1,10 @@
 from flask import Flask, jsonify
 import os
 import json
+from flask_cors import CORS  # 导入CORS模块
 
 app = Flask(__name__)
+CORS(app)  # 启用CORS支持，允许所有域名跨域访问
 
 # 计数器存储路径 (Vercel 临时存储)
 COUNTER_FILE = "/tmp/counters.json"
